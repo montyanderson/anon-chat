@@ -15,11 +15,17 @@ $(document).ready(function() {
 	}
 
 	function update() {
+		var scroll = true;
+
 		$.ajax({
 			url: "ajax.php?update",
 			success: function(res) {
 				$("#chat").html(res);
 				
+				if(scroll == true) {
+					$("#chat").scrollTop($("#chat")[0].scrollHeight);
+				}
+
 				setTimeout(function() {
 					update();
 				}, 1000);
