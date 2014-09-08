@@ -38,6 +38,10 @@ switch($_SERVER["QUERY_STRING"]) {
 			exit();
 		}
 
+		if(strlen($username) > 20 || strlen($text) > 100) {
+			exit();
+		}
+
 		$data = Array();
 		$data["username"] = $username;
 		$data["text"] = $text;
