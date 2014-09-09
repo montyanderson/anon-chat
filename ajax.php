@@ -1,6 +1,8 @@
 <?php
 header("Content-type: text/plain");
 
+date_default_timezone_set("Etc/GMT");
+
 ob_start();
 
 ini_set('display_errors',1);
