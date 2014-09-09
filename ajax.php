@@ -31,7 +31,7 @@ switch($_SERVER["QUERY_STRING"]) {
 
 		$_SESSION["init"] = true;
 
-		$cursor = $chat->find()->sort(array('tstamp' => -1))->limit(100)->skip(0);
+		$cursor = $chat->find()->sort(array('tstamp' => -1))->limit(50)->skip(0);
 		$array = iterator_to_array($cursor);
 
 		$array = array_reverse($array);
