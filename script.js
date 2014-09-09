@@ -49,3 +49,5 @@ $(document).ready(function() {
 	update(true);
 
 });
+
+alert("Welcome! New fetures include:\n-Enter to send message\n-Timestamp\n-Bypass swe3ring filter");

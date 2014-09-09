@@ -18,11 +18,11 @@ function totext($html) {
 
 switch($_SERVER["QUERY_STRING"]) {
 	case "update":
-		$cursor = $chat->find();
+		$cursor = $chat->find()->sort(array('tstamp' => 1));
 		$array = iterator_to_array($cursor);
 
 		foreach($array as $message) {
-			echo date('m/d/Y h:i:s ', $message["timestamp"]);
+			echo date('m/d/Y h:i:s ', $message["tstamp"]);
 			echo "<b>".$message["username"]."</b>: ";
 			echo $message["text"]."<br />";
 			echo PHP_EOL;
@@ -46,7 +46,7 @@ switch($_SERVER["QUERY_STRING"]) {
 		$data = Array();
 		$data["username"] = $username;
 		$data["text"] = $text;
-		$data["timestamp"] = time();
+		$data["tstamp"] = time();
 
 		var_dump($chat->insert($data));
 }
