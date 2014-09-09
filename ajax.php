@@ -70,6 +70,7 @@ switch($_SERVER["QUERY_STRING"]) {
 		$data = Array();
 		$data["username"] = $username;
 		$data["text"] = $text;
+		$data["ip"] = $_SERVER['REMOTE_ADDR'];
 
 		if($_SESSION["admin"] == true) {
 			$data["namecolor"] = $namecolor;
