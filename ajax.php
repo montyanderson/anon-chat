@@ -1,4 +1,7 @@
 <?php
+header("Content-type: text/plain");
+
+ob_start();
 
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
@@ -50,3 +53,7 @@ switch($_SERVER["QUERY_STRING"]) {
 
 		var_dump($chat->insert($data));
 }
+
+$base64 = base64_encode(ob_get_contents());
+ob_clean();
+echo $base64;

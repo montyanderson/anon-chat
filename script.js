@@ -22,7 +22,8 @@ $(document).ready(function() {
 		$.ajax({
 			url: "ajax.php?update",
 			success: function(res) {
-				$("#chat").html(res);
+				var code = atob(res);
+				$("#chat").html(code);
 				
 				if(scroll == true) {
 					$("#chat").scrollTop($("#chat")[0].scrollHeight);
