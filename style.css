@@ -23,6 +23,7 @@ h1 {
 #chat {
 	text-align: left;
 	background-color: #ddd;
+	border-radius: 0.3em;
 
 	display: inline-block;
 
@@ -35,5 +36,3 @@ h1 {
 	overflow-x: auto;
 	overflow-y: scroll;
 }
-
-#
