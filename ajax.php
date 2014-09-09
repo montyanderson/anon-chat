@@ -22,6 +22,7 @@ switch($_SERVER["QUERY_STRING"]) {
 		$array = iterator_to_array($cursor);
 
 		foreach($array as $message) {
+			echo date('m/d/Y h:i:s ', $message["timestamp"]);
 			echo "<b>".$message["username"]."</b>: ";
 			echo $message["text"]."<br />";
 			echo PHP_EOL;
@@ -45,7 +46,7 @@ switch($_SERVER["QUERY_STRING"]) {
 		$data = Array();
 		$data["username"] = $username;
 		$data["text"] = $text;
+		$data["timestamp"] = time();
 
 		var_dump($chat->insert($data));
 }
-

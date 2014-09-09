@@ -8,13 +8,15 @@ $(document).ready(function() {
 			type: "POST",
 			url: "ajax.php?send",
 			data: {username: username, text: text},
-			success: function() {}
+			success: function() {
+				update(false);
+			}
 		});
 
 		$("#message")[0].value = "";
 	}
 
-	function update() {
+	function update(loop) {
 		var scroll = true;
 
 		$.ajax({
@@ -26,15 +28,24 @@ $(document).ready(function() {
 					$("#chat").scrollTop($("#chat")[0].scrollHeight);
 				}
 
-				setTimeout(function() {
-					update();
-				}, 1000);
+				if(loop === true) {
+					setTimeout(function() {
+						update(true);
+					}, 1000);
+				}
 			}
 		});
 	}
 
+	$("#message").keypress(function(event) {
+		if ( event.which == 13 ) {
+			event.preventDefault();
+			send();
+		}
+	});
+
 	$("#send").click(send);
 
-	update();
+	update(true);
 
 });
