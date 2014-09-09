@@ -20,6 +20,10 @@ h1 {
 	padding-top: 1em;
 }
 
+button {
+	font-size: 1em;
+}
+
 #chat {
 	text-align: left;
 	background-color: #ddd;
@@ -35,4 +39,11 @@ h1 {
 
 	overflow-x: auto;
 	overflow-y: scroll;
+}
+
+#admin-tools {
+	z-index: 1000;
+	position: absolute;
+	top: 1em;
+	right: 1em;
 }

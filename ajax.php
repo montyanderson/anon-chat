@@ -1,7 +1,7 @@
 <?php
 header("Content-type: text/plain");
 
-date_default_timezone_set("Etc/GMT");
+date_default_timezone_set("Etc/GMT-1");
 
 ob_start();
 
