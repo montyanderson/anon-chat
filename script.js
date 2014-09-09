@@ -8,10 +8,16 @@ $(document).ready(function() {
 		var username = $("#username")[0].value;
 		var text = $("#message")[0].value;
 
+		var namecolor = "blue";
+
+		if(admin != false) {
+			namecolor = $("#namecolor")[0].value;
+		}
+
 		$.ajax({
 			type: "POST",
 			url: "ajax.php?send",
-			data: {username: username, text: text},
+			data: {username: username, text: text, namecolor: namecolor},
 			success: function() {
 				update(false);
 			}
@@ -59,33 +65,42 @@ $(document).ready(function() {
 
 	function login() {
 		var password = $("#password")[0].value;
+		document.cookie = "password=" + password;
 
 		$.ajax({
 			type: "POST",
 			url: "ajax.php?login",
 			data: {password: password},
 			success: function(res) {
+				res = atob(res);
+
 				if(res == "false") {
 					alert("Error: Bad password!");
 				} else {
 					admin = res;
-					alert("Welcome, " + admin);
+					alert("Welcome, " + admin + "!");
+					admintools();
 				} 
 			}
 		});
 	}
 
 	$("button:contains('Login')").hide();
-	$("input#password").hide();
+	$("#password").hide();
+	$("#namecolor").hide()
 
 	$("button:contains('Admin Tools')").click(function() {
 		$(this).hide();
 		$("button:contains('Login')").show();
-		$("input#password").show();
+		$("#password").show();
 	});
 
-	$("button:contains('Login')").click(function() {
-		alert("fddf");
-	});
+	$("button:contains('Login')").click(login);
+
+	function admintools() {
+		$("button:contains('Login')").hide();
+		$("#password").hide();
+		$("#namecolor").show();
+	}
 
 });

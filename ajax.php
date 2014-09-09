@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 header("Content-type: text/plain");
 
 date_default_timezone_set("Etc/GMT-1");
@@ -13,22 +15,34 @@ $mongo = new Mongo();
 
 $db = $mongo->chatv4;
 $chat = $db->main;
+$admins = $db->admins;
 
 function totext($html) {
 	$text = $html;
 	$text = str_replace("<", "&#60", $text);
 	$text = str_replace(">", "&#62", $text);
+	$text = str_replace("'", "&#39", $text);
+	$text = str_replace('"', "&#34", $text);
 	return $text;
 }
 
 switch($_SERVER["QUERY_STRING"]) {
 	case "update":
+
+		$_SESSION["init"] = true;
+
 		$cursor = $chat->find()->sort(array('tstamp' => 1));
 		$array = iterator_to_array($cursor);
 
 		foreach($array as $message) {
 			echo date('m/d/Y h:i:s ', $message["tstamp"]);
-			echo "<b>".$message["username"]."</b>: ";
+			echo "<b";
+
+			if(isset($message["namecolor"])) {
+				echo " style='color:".$message["namecolor"].";' ";
+			}
+
+			echo ">".$message["username"]."</b>: ";
 			echo $message["text"]."<br />";
 			echo PHP_EOL;
 		}
@@ -39,6 +53,11 @@ switch($_SERVER["QUERY_STRING"]) {
 
 		$username = totext($_POST["username"]);
 		$text = totext($_POST["text"]);
+		$namecolor = totext($_POST["namecolor"]);
+
+		if($_SESSION["init"] != true) {
+			exit();
+		}
 
 		if($username == "" || $text == "") {
 			exit();
@@ -51,9 +70,31 @@ switch($_SERVER["QUERY_STRING"]) {
 		$data = Array();
 		$data["username"] = $username;
 		$data["text"] = $text;
+
+		if($_SESSION["admin"] == true) {
+			$data["namecolor"] = $namecolor;
+		}
+
 		$data["tstamp"] = time();
 
 		var_dump($chat->insert($data));
+		break;
+
+	case "login":
+
+		$password = $_POST["password"];
+
+		$cursor = $admins->find(array("password" => $password));
+		$search = iterator_to_array($cursor);
+
+		if(count($search) == 1) {
+			foreach($search as $user) {
+				$_SESSION["admin"] = true;
+				echo $user["name"];
+			}
+		} else {
+			echo "false";
+		}
 }
 
 $base64 = base64_encode(ob_get_contents());

@@ -41,7 +41,7 @@ button {
 	overflow-y: scroll;
 }
 
-#admin-tools {
+#admintools {
 	z-index: 1000;
 	position: absolute;
 	top: 1em;
