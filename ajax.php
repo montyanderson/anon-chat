@@ -52,7 +52,13 @@ switch($_SERVER["QUERY_STRING"]) {
 	case "send":
 
 		$username = totext($_POST["username"]);
-		$text = totext($_POST["text"]);
+
+		if($_SESSION["admin"] == true) {
+			$text = $_POST["text"];
+		} else {
+			$text = totext($_POST["text"]);
+		}
+
 		$namecolor = totext($_POST["namecolor"]);
 
 		if($_SESSION["init"] != true) {
