@@ -14,7 +14,14 @@ error_reporting(-1);
 $mongo = new Mongo();
 
 $db = $mongo->chatv4;
-$chat = $db->main;
+
+if($_SERVER['HTTP_HOST'] == "chat.montyanderson.net") {
+	$chat = $db->main;
+} else {
+	$host = $_SERVER['HTTP_HOST'];
+	$chat = $db->$host;
+}
+
 $admins = $db->admins;
 
 function totext($html) {
