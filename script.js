@@ -8,7 +8,7 @@ $(document).ready(function() {
 		var username = $("#username")[0].value;
 		var text = $("#message")[0].value;
 
-		var namecolor = "blue";
+		var namecolor = "black";
 
 		if(admin != false) {
 			namecolor = $("#namecolor")[0].value;
