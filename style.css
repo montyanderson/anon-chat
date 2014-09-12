@@ -1,3 +1,5 @@
+/* General Styles */
+
 * {
 	margin: 0;
 	padding: 0;
@@ -46,4 +48,10 @@ button {
 	position: absolute;
 	top: 1em;
 	right: 1em;
+}
+
+@media (max-width: 50.5em) {
+  #chat {
+  	width: 100%;
+  }
 }
