@@ -1,4 +1,4 @@
-chatv4
-======
+anon-chat
+========
 
-An online chat that uses MongoDB and encryption. 
+An online chat that uses MongoDB.
