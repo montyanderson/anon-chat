@@ -1,16 +1,16 @@
 ![anon-chat](https://i.imgur.com/YxPLFUS.png)
-========
+---------------------------------------------
 
 An online chat that uses MongoDB.
 
-Public Chatrooms:
------------------
+Public Chatrooms
+----------------
 
 * [chat.montyanderson.net](http://chat.montyanderson.net)
 * [anon-chat.tk](http://anon-chat.tk)
 
-Features:
----------
+Features
+--------
 
 * Base-64 encodes traffic to avoid swearing/monitoring filters.
 * Automatically stores different domains in different collections.
@@ -23,8 +23,8 @@ Features:
   * Admins will be able to delete messages.
 
 
-Installation:
--------------
+Installation
+------------
 
 Installation comming soon!
 
