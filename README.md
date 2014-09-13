@@ -4,6 +4,7 @@ anon-chat
 An online chat that uses MongoDB.
 
 Features:
+---------
 
 * Base-64 encodes traffic to avoid swearing/monitoring filters.
 * Automatically stores different domains in different collections.
