@@ -3,7 +3,7 @@
 
 An online chat that uses MongoDB.
 
-![anon-chat screenshot](https://i.imgur.com/jqugYrX.png)
+![anon-chat screenshot](https://i.imgur.com/vcceaJZ.png)
 
 Public Chatrooms
 ----------------
