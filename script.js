@@ -31,15 +31,13 @@ $(document).ready(function() {
 	}
 
 	function update(loop) {
-		var scroll = true;
-
 		$.ajax({
 			url: "ajax.php?update",
 			success: function(res) {
 				var code = atob(res);
 				$("#chat").html(code);
 				
-				if(scroll == true) {
+				if($("#autoscroll").is(":checked")) {
 					$("#chat").scrollTop($("#chat")[0].scrollHeight);
 				}
 
