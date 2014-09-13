@@ -6,8 +6,8 @@ An online chat that uses MongoDB.
 Public Chatrooms:
 -----------------
 
-![chat.montyanderson.net](http://chat.montyanderson.net)
-![anon-chat.tk](http://anon-chat.tk)
+[chat.montyanderson.net](http://chat.montyanderson.net)
+[anon-chat.tk](http://anon-chat.tk)
 
 Features:
 ---------
