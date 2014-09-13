@@ -1,4 +1,4 @@
-anon-chat
+![anon-chat](https://i.imgur.com/YxPLFUS.png)
 ========
 
 An online chat that uses MongoDB.
