@@ -105,4 +105,8 @@ $(document).ready(function() {
 		$("#namecolor").show();
 	}
 
+	/* dialog */
+
+	$("#dialog").dialog()
+
 });
