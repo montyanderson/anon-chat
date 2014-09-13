@@ -52,7 +52,15 @@ switch($_SERVER["QUERY_STRING"]) {
 			}
 
 			echo ">".$message["username"]."</b>: ";
-			echo $message["text"]."<br />";
+
+			if(substr($message["text"], 0, 4) == "&#62") {
+				echo "<span style='color:#789922;'>";
+				echo $message["text"];
+				echo "</span><br />";
+			} else {
+				echo $message["text"]."<br />";
+			}
+
 			echo PHP_EOL;
 		}
 		break;
