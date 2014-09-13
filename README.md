@@ -15,3 +15,11 @@ Features:
   * Admins can set the colour of their name (to show their status).
   * Admins can see IPs (in order to identify people).
   * Admins will be able to delete messages.
+
+
+Installation:
+-------------
+
+Installation comming soon!
+
+![Installation comming soon!](https://octodex.github.com/images/labtocat.png)
