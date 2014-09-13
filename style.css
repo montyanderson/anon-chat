@@ -22,6 +22,10 @@ h1 {
 	padding-top: 1em;
 }
 
+h2 {
+	font-size: 2em;
+}
+
 button {
 	font-size: 1em;
 }
@@ -33,7 +37,7 @@ button {
 
 	display: inline-block;
 
-	margin-top: 3em;
+	margin-top: 2em;
 	padding: 1em;
 
 	width: 50em;

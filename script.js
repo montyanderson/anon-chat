@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
+	/* inital */
+
 	var admin = false;
+
+	document.title += document.domain;
 
 	/* main functions */
 
