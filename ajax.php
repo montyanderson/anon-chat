@@ -13,14 +13,11 @@ error_reporting(-1);
 
 $mongo = new Mongo();
 
-$db = $mongo->chatv4;
+$dbname = "anon-chat";
+$db = $mongo->$dbname;
 
-if($_SERVER['HTTP_HOST'] == "chat.montyanderson.net") {
-	$chat = $db->main;
-} else {
-	$host = $_SERVER['HTTP_HOST'];
-	$chat = $db->$host;
-}
+$host = str_replace(".", "", $_SERVER["HTTP_HOST"]);
+$chat = $db->$host;
 
 $admins = $db->admins;
 
