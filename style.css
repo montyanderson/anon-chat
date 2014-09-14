@@ -15,10 +15,12 @@ body {
 	text-align: center;
 }
 
-h1 {
+h1, h2 {
 	font-family: "Ubuntu";
-	font-size: 6em;
+}
 
+h1 {
+	font-size: 6em;
 	padding-top: 5%;
 }
 
