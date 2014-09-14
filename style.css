@@ -55,9 +55,16 @@ button {
 
 #admintools {
 	z-index: 1000;
-	position: absolute;
+	position: fixed;
 	top: 1em;
 	right: 1em;
+}
+
+#github > img {
+	position: fixed;
+	top: 0; 
+	left: 0; 
+	border: 0;
 }
 
 @media (max-width: 50.5em) {
