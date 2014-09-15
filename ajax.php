@@ -18,7 +18,7 @@ $mongo = new Mongo();
 $dbname = "anon-chat";
 $db = $mongo->$dbname;
 
-$host = str_replace(".", "", $_SERVER["HTTP_HOST"]);
+$host = str_replace("-", "", str_replace(".", "", $_SERVER["HTTP_HOST"]));
 $chat = $db->$host;
 
 $admins = $db->admins;
