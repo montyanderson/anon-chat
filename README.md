@@ -21,7 +21,7 @@ Features
 * Requires minimal setup-time.
 * Allows for admin logins.
   * Admins can set the colour of their name (to show their status).
-  * Admins can see IPs (in order to identify people).
+  * Admins can see a **hash of** IPs (in order to identify people).
   * Admins will be able to delete messages.
 
 
