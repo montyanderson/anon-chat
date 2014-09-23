@@ -34,6 +34,8 @@ h1 > .char7 {color: #d35400;}
 h1 > .char8 {color: #f39c12;}
 h1 > .char9 {color: #f39c12;}
 
+h1 > span:hover {color: #3498db;}
+
 h2 {
 	font-size: 2em;
 }
