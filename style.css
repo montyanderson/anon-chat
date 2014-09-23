@@ -24,6 +24,16 @@ h1 {
 	padding-top: 5%;
 }
 
+h1 > .char1 {color: #f1c40f;}
+h1 > .char2 {color: #f39c12;}
+h1 > .char3 {color: #e67e22;}
+h1 > .char4 {color: #d35400;}
+h1 > .char5 {color: #e74c3c;}
+h1 > .char6 {color: #c0392b;}
+h1 > .char7 {color: #d35400;}
+h1 > .char8 {color: #f39c12;}
+h1 > .char9 {color: #f39c12;}
+
 h2 {
 	font-size: 2em;
 }

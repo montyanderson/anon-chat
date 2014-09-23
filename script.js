@@ -63,6 +63,12 @@ $(document).ready(function() {
 
 	update(true);
 
+	/* fancy text */
+
+	if(jQuery().lettering) {
+    	$("h1").lettering();
+ 	}
+
 	/* admin tools */
 
 	function login() {
