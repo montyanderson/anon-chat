@@ -46,7 +46,7 @@ switch($_SERVER["QUERY_STRING"]) {
 		$array = array_reverse($array);
 
 		foreach($array as $message) {
-			echo date('m/d/Y h:i:s ', $message["tstamp"]);
+			echo date('m/d/Y H:i:s ', $message["tstamp"]);
 			echo "<b";
 
 			if(isset($message["namecolor"])) {
