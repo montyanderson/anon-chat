@@ -55,6 +55,13 @@ switch($_SERVER["QUERY_STRING"]) {
 
 			echo ">".$message["username"]."</b>: ";
 
+			$temp = explode("http", $message["text"]);
+
+			if(count($temp) > 1) {
+				$temp = explode(" ", $temp[1]); /* remove any words after it */
+				$message["text"] = "<a href='http" . $temp[0] . "'>http" . $temp[0] . "</a>";
+			}
+
 			if(substr($message["text"], 0, 4) == "&#62") {
 				echo "<span style='color:#789922;'>";
 				echo $message["text"];
