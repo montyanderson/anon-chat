@@ -1,11 +1,5 @@
 $(document).ready(function() {
 
-	/* inital */
-
-	var admin = false;
-
-	document.title += document.domain;
-
 	/* main functions */
 
 	function send() {
@@ -50,6 +44,18 @@ $(document).ready(function() {
 		});
 	}
 
+	/* inital */
+
+	var admin = false;
+
+	document.title += document.domain;
+
+	/* error handling */ 
+
+	$(document).ajaxError(function() {
+		location.reload(); /* refresh the page, on error */
+	});
+
 	/* setting io  for main functions */
 
 	$("#message").keypress(function(event) {
@@ -68,6 +74,11 @@ $(document).ready(function() {
 	if(jQuery().lettering) {
     	$("h1").lettering();
  	}
+
+ 	/* random username generation */
+
+ 	var random = Math.floor(Math.random()*901) + 100; /* between 100 - 1000) */
+	$("#username")[0].value = "Anonymous" + random;
 
 	/* admin tools */
 
