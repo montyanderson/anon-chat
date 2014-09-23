@@ -13,18 +13,21 @@ if($_SERVER["HTTP_HOST"] == "localhost") {
 	error_reporting(-1);
 }
 
+/* connect to database */
+
 $mongo = new Mongo();
 
 $dbname = "anon-chat";
 $db = $mongo->$dbname;
 
 $host = str_replace("-", "", str_replace(".", "", $_SERVER["HTTP_HOST"]));
-$chat = $db->$host;
+$chat = $db->$host; /* use a collections per domain */
 
 $admins = $db->admins;
 
 function totext($html) {
 	$text = $html;
+	$text = str_replace("£", "&pound;", $text); /* £ is the only symbol that chrome doesn't show */
 	$text = str_replace("<", "&#60", $text);
 	$text = str_replace(">", "&#62", $text);
 	$text = str_replace("'", "&#39", $text);
