@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>anon-chat - </title>
+
+		<meta charset="utf-8" />
+
+		<link href="//fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
+		<script src="js/script.js"></script>
+
+	</head>
+	<body>
+
+		<h1>anon-chat</h1>
+		<h2><script>document.write(document.domain);</script></h2>
+
+		<section id="chat"></section>
+
+		<section id="input">
+			<input id="username" placeholder="Username" maxlength="20" />
+			<input id="message" placeholder="Message" maxlength="100" />
+			<button id="send">Go!</button>
+			<input type="checkbox" id="autoscroll" value="scroll" checked><p>Auto Scroll</p>
+		</section>
+
+		<section id="admintools">
+			<button>Admin Tools</button>
+			<input type="password" id="password" />
+			<button>Login</button>
+			<input type="color" value="#ff0000" id="namecolor">
+		</section>
+
+	</body>
+</html>
