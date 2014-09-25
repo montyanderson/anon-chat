@@ -1,3 +1,5 @@
+var admin;
+
 $(document).ready(function() {
 
 	/* main functions */
