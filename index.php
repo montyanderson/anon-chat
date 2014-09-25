@@ -39,5 +39,9 @@
 			<input type="color" value="#ff0000" id="namecolor">
 		</section>
 
+		<section id="footer">
+			<h3>Copyright &copy; <a href="http://tonyblokes.tk" id="copyright">Tony Blokes</a>, <?php echo date("Y"); ?></h3>
+		</section>
+
 	</body>
 </html>
