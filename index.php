@@ -40,7 +40,7 @@
 		</section>
 
 		<section id="footer">
-			<h3>Copyright &copy; <a href="http://tonyblokes.tk" id="copyright">Tony Blokes</a>, <?php echo date("Y"); ?></h3>
+			<h3>Copyright &copy; <a href="http://tonyblokes.tk" id="copyright">M.J.A</a>, <?php echo date("Y"); ?></h3>
 		</section>
 
 	</body>
